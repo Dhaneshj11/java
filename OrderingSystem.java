@@ -147,80 +147,10 @@ public class OrderingSystem {
 
 		//conditions Burger
 		else if(choose==2) {
-			System.out.println("You choose Burger");
-			System.out.println("Which Pizza you want? ");
-			System.out.println("Press 11 for Chicken Burger, Press 12 for Veg Burger, Press 13 for Jain Burger ");
-			System.out.println("Press code you want to buy? :");
-			choice = scanner.nextInt();
-			if(choice==11) {
-				System.out.println("You choose Chicken Burger ");
-				System.out.println("How many Chicken Burger you want to buy: ");
-				quantity=scanner.nextInt();
-				total = total + (quantity*120);
-				System.out.println("You want to buy again? ");
-				System.out.println("Press Y for Yes and N for No : ");
-				again = scanner.next();
-			}
-
-			else if(choice==12) {
-				System.out.println("You choose Veg Burger ");
-				System.out.println("How many Veg Burger you want to buy: ");
-				quantity=scanner.nextInt();
-				total = total + (quantity*80);
-				System.out.println("You want to buy again? ");
-				System.out.println("Press Y for Yes and N for No : ");
-				again = scanner.next();
-			}
-
-			else if(choice==13) {
-				System.out.println("You choose Jain Burger ");
-				System.out.println("How many Jain Burger you want to buy: ");
-				quantity=scanner.nextInt();
-				total = total + (quantity*90);
-				System.out.println("You want to buy again? ");
-				System.out.println("Press Y for Yes and N for No : ");
-				again = scanner.next();
-			}
-			else if(choice!=11 ||choice!=12 || choice!=13) {
-				System.out.println("Invalid Code");
-				order();
-			}
-
-
-
-
-
-			if(again.equalsIgnoreCase("Y")) {
-				order();
-			}
-
-			else if(again.equalsIgnoreCase("N")){
-				System.out.println("The total amount is "+total+" Rs");
-				System.out.println("Enter a payment: ");
-				pay = scanner.nextDouble();
-				if(pay <= total) 
-				{
-					System.out.println("The Total Amount to be paid is "+total +" Rs"+ " and you pay "+pay+" Rs");
-					total=0;
-					System.out.println();
-					order();
-					System.out.println();
-
-				}
-
-
-
-				else {
-
-
-					System.out.println("Total price is "+total+" Rs");
-					total = pay-total;
-					System.out.println("The Change is "+total+" Rs");
-					System.out.println("Thank you! Visit Again..");
-					System.exit(0);
-				}
-
-			}
+			Burger burger=new Burger();
+			bruger.createBurgerList();
+		
+		}
 
 			else {
 				System.out.println("Enter Valid Input");
@@ -386,5 +316,85 @@ public class OrderingSystem {
 	}
 
 }
+class Burger
+{
+	void createBurgerList()
+	{
+	System.out.println("You choose Burger");
+			System.out.println("Which Pizza you want? ");
+			System.out.println("Press 11 for Chicken Burger, Press 12 for Veg Burger, Press 13 for Jain Burger ");
+			System.out.println("Press code you want to buy? :");
+			choice = scanner.nextInt();
+			if(choice==11) {
+				System.out.println("You choose Chicken Burger ");
+				System.out.println("How many Chicken Burger you want to buy: ");
+				quantity=scanner.nextInt();
+				total = total + (quantity*120);
+				System.out.println("You want to buy again? ");
+				System.out.println("Press Y for Yes and N for No : ");
+				again = scanner.next();
+			}
+
+			else if(choice==12) {
+				System.out.println("You choose Veg Burger ");
+				System.out.println("How many Veg Burger you want to buy: ");
+				quantity=scanner.nextInt();
+				total = total + (quantity*80);
+				System.out.println("You want to buy again? ");
+				System.out.println("Press Y for Yes and N for No : ");
+				again = scanner.next();
+			}
+
+			else if(choice==13) {
+				System.out.println("You choose Jain Burger ");
+				System.out.println("How many Jain Burger you want to buy: ");
+				quantity=scanner.nextInt();
+				total = total + (quantity*90);
+				System.out.println("You want to buy again? ");
+				System.out.println("Press Y for Yes and N for No : ");
+				again = scanner.next();
+			}
+			else if(choice!=11 ||choice!=12 || choice!=13) {
+				System.out.println("Invalid Code");
+				order();
+			}
+
+
+
+
+
+			if(again.equalsIgnoreCase("Y")) {
+				order();
+			}
+
+			else if(again.equalsIgnoreCase("N")){
+				System.out.println("The total amount is "+total+" Rs");
+				System.out.println("Enter a payment: ");
+				pay = scanner.nextDouble();
+				if(pay <= total) 
+				{
+					System.out.println("The Total Amount to be paid is "+total +" Rs"+ " and you pay "+pay+" Rs");
+					total=0;
+					System.out.println();
+					order();
+					System.out.println();
+
+				}
+
+
+
+				else {
+
+
+					System.out.println("Total price is "+total+" Rs");
+					total = pay-total;
+					System.out.println("The Change is "+total+" Rs");
+					System.out.println("Thank you! Visit Again..");
+					System.exit(0);
+				}
+
+			}
+	}
+
 
 
